@@ -1,6 +1,6 @@
 {
-  "name": "drawjs",
-  "description": "drawjs, simple drawing library, WIP",
+  "name": "drawie",
+  "description": "drawie, simple drawing library, WIP",
   "keywords": [
     "canvas",
     "drawing",
@@ -10,9 +10,9 @@
   "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ajlopez/drawjs.git"
+    "url": "git://github.com/ajlopez/drawie.git"
   },
-  "main": "./lib/drawjs.js",
+  "main": "./lib/drawie.js",
   "engines": {
     "node": ">= 8.0.0"
   },

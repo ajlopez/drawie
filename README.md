@@ -1,4 +1,4 @@
-# DrawJS
+# Drawie
 
 Simple drawing library. WIP.
 
@@ -8,8 +8,8 @@ Simple drawing library. WIP.
 
 ## Contribution
 
-Feel free to [file issues](https://github.com/ajlopez/drawjs) and submit
-[pull requests](https://github.com/ajlopez/drawjs/pulls) — contributions are
+Feel free to [file issues](https://github.com/ajlopez/drawie) and submit
+[pull requests](https://github.com/ajlopez/drawie/pulls) — contributions are
 welcome.
 
 If you submit a pull request, please be sure to add or update corresponding
