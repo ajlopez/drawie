@@ -18,3 +18,27 @@ exports['create line as object'] = function (test) {
 	test.deepEqual(line.style(), { color: "red" });
 };
 
+exports['rotate line'] = function (test) {
+    const from = drawie.point(1, 42);
+    const to = drawie.point(2, 3);
+    const line = drawie.line(from, to, { color: "red" });
+    
+    const line2 = line.rotate(90);
+    
+    test.ok(line2);
+    test.equal(typeof line2, 'object');
+	
+	test.equal(line2.from().x(), -42);
+	test.equal(line2.from().y(), 1);
+	
+	test.equal(line2.to().x(), -3);
+	test.equal(line2.to().y(), 2);
+	
+	test.deepEqual(line2.style(), { color: "red" });
+    
+    line2.style().closed = true;
+    
+	test.deepEqual(line.style(), { color: "red" });
+	test.deepEqual(line2.style(), { color: "red", closed: true });
+};
+
