@@ -6,8 +6,9 @@ exports['create yfunction as object'] = function (test) {
     const from = 0;
     const to = 10;
 	const step = 1;
+    const style = { color: "red" };
 
-    const yfunction = drawie.yfunction(fn, from, to, step, { color: "red" });
+    const yfunction = drawie.yfunction(fn, from, to, step, style);
 	
     test.ok(yfunction);
     test.equal(typeof yfunction, 'object');
@@ -15,6 +16,11 @@ exports['create yfunction as object'] = function (test) {
     test.ok(yfunction.elements());
 	test.ok(Array.isArray(yfunction.elements()));
 	test.equal(yfunction.elements().length, 10);
-	test.deepEqual(yfunction.style(), { color: "red" });
+	test.deepEqual(yfunction.style(), style);
+    
+    yfunction.style().color = "blue";
+    
+    test.deepEqual(yfunction.style(), { color: "blue" });
+    test.deepEqual(style, { color: "red" });
 };
 
