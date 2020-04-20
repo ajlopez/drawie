@@ -2,9 +2,10 @@
 const drawie = require('..');
 
 exports['create line as object'] = function (test) {
+    const style = { color: "red" };
     const from = drawie.point(1, 42);
     const to = drawie.point(2, 3);
-    const line = drawie.line(from, to, { color: "red" });
+    const line = drawie.line(from, to, style);
     
     test.ok(line);
     test.equal(typeof line, 'object');
@@ -15,7 +16,12 @@ exports['create line as object'] = function (test) {
 	test.equal(line.to().x(), 2);
 	test.equal(line.to().y(), 3);
 	
-	test.deepEqual(line.style(), { color: "red" });
+    test.deepEqual(line.style(), style);
+    
+    line.style().color = "blue";
+    
+    test.deepEqual(line.style(), { color: "blue" });
+    test.deepEqual(style, { color: "red" });
 };
 
 exports['rotate line'] = function (test) {
