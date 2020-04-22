@@ -10,5 +10,8 @@ exports['create repeat as object'] = function (test) {
 	
     test.ok(repeat);
     test.equal(typeof repeat, 'object');
+    
+    test.ok(repeat.elements());
+    test.equal(repeat.elements().length, 100);
 };
 
