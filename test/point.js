@@ -52,6 +52,15 @@ exports['vertical resize point'] = function (test) {
     test.equal(result.y(), 42);
 };
 
+exports['mirror point'] = function (test) {
+    const point = drawie.point(1, 42);
+
+	const result = point.mirror();
+	
+    test.equal(result.x(), -1);
+    test.equal(result.y(), -42);
+};
+
 exports['rotate point 0 degrees'] = function (test) {
     const point = drawie.point(1, 42);
 
