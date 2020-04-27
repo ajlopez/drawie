@@ -48,3 +48,27 @@ exports['rotate line'] = function (test) {
 	test.deepEqual(line2.style(), { color: "red", closed: true });
 };
 
+exports['mirror line'] = function (test) {
+    const from = drawie.point(1, 42);
+    const to = drawie.point(2, 3);
+    const line = drawie.line(from, to, { color: "red" });
+    
+    const line2 = line.mirror();
+    
+    test.ok(line2);
+    test.equal(typeof line2, 'object');
+	
+	test.equal(line2.from().x(), -1);
+	test.equal(line2.from().y(), -42);
+	
+	test.equal(line2.to().x(), -2);
+	test.equal(line2.to().y(), -3);
+	
+	test.deepEqual(line2.style(), { color: "red" });
+    
+    line2.style().closed = true;
+    
+	test.deepEqual(line.style(), { color: "red" });
+	test.deepEqual(line2.style(), { color: "red", closed: true });
+};
+
