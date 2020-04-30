@@ -18,4 +18,22 @@ exports['create triangle as object'] = function (test) {
     
     test.deepEqual(triangle.style(), { color: "blue" });
     test.deepEqual(style, { color: "red" });
+    
+    test.ok(triangle.elements());
+    test.equal(triangle.elements().length, 3);
+    
+    test.equal(triangle.elements()[0].from().x(), 1);
+    test.equal(triangle.elements()[0].from().y(), 42);
+    test.equal(triangle.elements()[0].to().x(), 2);
+    test.equal(triangle.elements()[0].to().y(), 3);
+    
+    test.equal(triangle.elements()[1].from().x(), 2);
+    test.equal(triangle.elements()[1].from().y(), 3);
+    test.equal(triangle.elements()[1].to().x(), 3);
+    test.equal(triangle.elements()[1].to().y(), 3);
+    
+    test.equal(triangle.elements()[2].from().x(), 3);
+    test.equal(triangle.elements()[2].from().y(), 3);
+    test.equal(triangle.elements()[2].to().x(), 1);
+    test.equal(triangle.elements()[2].to().y(), 42);
 };
