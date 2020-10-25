@@ -26,6 +26,29 @@ exports['create composite as object'] = function (test) {
 	test.deepEqual(line.style(), { color : "yellow" });
 };
 
+exports['composite with new style'] = function (test) {
+    const style = { color: "red" };
+    const from = drawie.point(1, 42);
+    const to = drawie.point(2, 3);
+    const line = drawie.line(from, to);
+	
+	const composite = drawie.composite([line], style);
+
+    const newstyle = { color: "blue" };
+    
+    const composite2 = composite.style(newstyle);
+    
+    test.ok(composite2);
+    test.equal(typeof composite2, 'object');
+
+    test.ok(composite2.elements());
+	test.ok(Array.isArray(composite2.elements()));
+	test.equal(composite2.elements().length, 1);
+	test.deepEqual(composite2.style(), newstyle);
+    
+	test.deepEqual(composite.style(), style);
+};
+
 exports['mirror composite'] = function (test) {
     const style = { color: "red" };
     const from = drawie.point(1, 42);
