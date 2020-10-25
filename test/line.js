@@ -24,6 +24,22 @@ exports['create line as object'] = function (test) {
     test.deepEqual(style, { color: "red" });
 };
 
+exports['line with new style'] = function (test) {
+    const style = { color: "red" };
+    const from = drawie.point(1, 42);
+    const to = drawie.point(2, 3);
+    const line = drawie.line(from, to, style);
+	
+    test.deepEqual(line.style(), style);
+    
+    const newstyle = { color: "blue" };
+    const line2 = line.style(newstyle);
+    
+    test.ok(line2);
+    test.deepEqual(line2.style(), newstyle);
+    test.deepEqual(line.style(), style);
+};
+
 exports['rotate line'] = function (test) {
     const from = drawie.point(1, 42);
     const to = drawie.point(2, 3);
