@@ -37,6 +37,11 @@ exports['line with new style'] = function (test) {
     
     test.ok(line2);
     test.deepEqual(line2.style(), newstyle);
+	test.equal(line2.from().x(), 1);
+	test.equal(line2.from().y(), 42);	
+	test.equal(line2.to().x(), 2);
+	test.equal(line2.to().y(), 3);
+
     test.deepEqual(line.style(), style);
 };
 
