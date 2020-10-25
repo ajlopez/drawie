@@ -37,7 +37,7 @@ exports['resize point'] = function (test) {
 exports['horizontal resize point'] = function (test) {
     const point = drawie.point(1, 42);
 
-	const result = point.horizontalResize(2);
+	const result = point.hresize(2);
 	
     test.equal(result.x(), 2);
     test.equal(result.y(), 42);
@@ -46,7 +46,7 @@ exports['horizontal resize point'] = function (test) {
 exports['vertical resize point'] = function (test) {
     const point = drawie.point(1, 21);
 
-	const result = point.verticalResize(2);
+	const result = point.vresize(2);
 	
     test.equal(result.x(), 1);
     test.equal(result.y(), 42);
