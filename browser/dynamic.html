@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Dynamic Drawie</title>
+	<script type="text/javascript" src="../lib/drawie.js"></script>
+</head>
+<body>
+	<h1>Dynamic Drawie</h1>
+    <div>
+	<canvas id="canvas" width="800" height="400"></canvas>
+    </div>
+    <div>
+        <textarea autofocus rows=20 cols=80 id="code"></textarea>
+    </div>
+	
+<script type="text/javascript">
+    window.onload = function () {
+        let lastcode = '';
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext("2d");
+		const image = drawie.image(ctx);
+        
+        function redraw() {
+            try {
+                const code = document.getElementById('code').value.trim();
+                
+                if (code === lastcode)
+                    return;
+                    
+                lastcode = code;
+                                                   
+                function add(element) {
+                    result.push(element);
+                }
+                
+                const fn = new Function('drawie', 'add', 'with (drawie) {' + code + '}');
+                const result = [];
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                fn(drawie, add);
+                
+                drawie.composite(result).draw(image);
+            }
+            catch {
+                return;
+            }
+        }
+        
+        function loop() {
+            redraw();
+            
+            setTimeout(loop, 2000);
+        }
+        
+        loop();
+	};
+	
+	function p(x, y) {
+		return drawie.point(x, y);
+	}
+	
+	function line(from, to, style ) {
+		return drawie.line(from, to, style);
+	}
+</script>
+</body>
+</html>
