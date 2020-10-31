@@ -19,7 +19,7 @@
         let lastcode = '';
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext("2d");
-		const image = drawie.image(ctx);
+		const image = drawie.image(ctx, canvas.width / 2, canvas.height / 2);
         
         function redraw() {
             try {
