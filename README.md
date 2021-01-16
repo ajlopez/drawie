@@ -5,6 +5,7 @@ Simple drawing library. WIP.
 ## References
 
 - [AjDrawJS](https://github.com/ajlopez/AjDrawJs/)
+- [GoJS: Interactive JavaScript Diagrams for the Web](https://gojs.net/latest/index.html)
 
 ## Contribution
 
