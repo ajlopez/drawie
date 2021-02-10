@@ -6,6 +6,7 @@ Simple drawing library. WIP.
 
 - [AjDrawJS](https://github.com/ajlopez/AjDrawJs/)
 - [GoJS: Interactive JavaScript Diagrams for the Web](https://gojs.net/latest/index.html)
+- [Programmatically Generate Images with CSS Painting API](https://blog.bitsrc.io/programmatically-generate-images-with-css-painting-api-3b1a860dae3b)
 
 ## Contribution
 
