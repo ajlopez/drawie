@@ -24,3 +24,19 @@ exports['create triangle as object'] = function (test) {
     test.equal(triangle.v3().z(), 0);
 };
 
+exports['get normal'] = function (test) {
+    const from = drawie.point(0, 0, 0);
+    const to = drawie.point(1, 0, 0);
+    const to2 = drawie.point(0, 1, 0);
+
+    const triangle = drawie.triangle(from, to, to2);
+    
+    const normal = triangle.normal();
+    
+    test.ok(normal);
+    
+    test.equal(normal.x(), 0);
+    test.equal(normal.y(), 0);
+    test.equal(normal.z(), 1);
+};
+
