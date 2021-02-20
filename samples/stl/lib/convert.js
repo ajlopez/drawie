@@ -47,6 +47,12 @@ function convert(element, name, text) {
                 }
             }
         }
+        else if (Array.isArray(element)) {
+            const l = element.length;
+            
+            for (let k = 0; k < l; k++)
+                text = convert(element[k], null, text);
+        }
         else {
             const normal = element.normal();
             
