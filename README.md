@@ -11,6 +11,14 @@ Simple drawing library. WIP.
 - [Outer Product](https://en.wikipedia.org/wiki/Outer_product)
 - [Exterior Product](https://en.wikipedia.org/wiki/Outer_product)
 
+## To Do
+
+- Rotation of 3d points
+- Rotation of 3d polygon
+- Standard conversion from 3d object to STL file
+- Resize 3d polygons
+- Composite of 3d objects (or simple arrays?)
+
 ## Contribution
 
 Feel free to [file issues](https://github.com/ajlopez/drawie) and submit
