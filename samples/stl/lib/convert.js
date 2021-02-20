@@ -1,4 +1,6 @@
 
+const drawie = require('../../..');
+
 let indent = 0;
 
 function addLine(text, line) {
@@ -30,8 +32,20 @@ function convert(element, name, text) {
             const elements = element.elements();
             const l = elements.length;
             
-            for (let k = 0; k < l; k++)
-                convert(elements[k], null, text);
+            if (elements[0].elements) 
+                for (let k = 0; k < l; k++)
+                    text = convert(elements[k], null, text);
+            else {
+                for (let k = 0; k < l - 1; k += 2) {
+                    const p1 = elements[k];
+                    const p2 = elements[(k + 1) % l];
+                    const p3 = elements[(k + 2) % l];
+                    
+                    const triangle = drawie.triangle(p1, p2, p3);
+                    
+                    text = convert(triangle, null, text);
+                }
+            }
         }
         else {
             const normal = element.normal();
