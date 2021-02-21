@@ -1,0 +1,63 @@
+solid cube
+      facet normal 0 0 1
+        vertex 0 0 1
+        vertex 1 0 1
+        vertex 1 1 1
+      endfacet
+      facet normal 0 0 1
+        vertex 1 1 1
+        vertex 0 1 1
+        vertex 0 0 1
+      endfacet
+      facet normal 0 1 0
+        vertex 0 0 0
+        vertex 1 0 0
+        vertex 1 0 1
+      endfacet
+      facet normal 0 1 0
+        vertex 1 0 1
+        vertex 0 0 1
+        vertex 0 0 0
+      endfacet
+      facet normal -1 0 0
+        vertex 0 0 0
+        vertex 0 0 1
+        vertex 0 1 1
+      endfacet
+      facet normal -1 0 0
+        vertex 0 1 1
+        vertex 0 1 0
+        vertex 0 0 0
+      endfacet
+      facet normal 0 0 -1
+        vertex 0 0 0
+        vertex 0 1 0
+        vertex 1 1 0
+      endfacet
+      facet normal 0 0 -1
+        vertex 1 1 0
+        vertex 1 0 0
+        vertex 0 0 0
+      endfacet
+      facet normal 0 -1 0
+        vertex 0 1 0
+        vertex 0 1 1
+        vertex 1 1 1
+      endfacet
+      facet normal 0 -1 0
+        vertex 1 1 1
+        vertex 1 1 0
+        vertex 0 1 0
+      endfacet
+      facet normal 1 0 0
+        vertex 1 0 0
+        vertex 1 1 0
+        vertex 1 1 1
+      endfacet
+      facet normal 1 0 0
+        vertex 1 1 1
+        vertex 1 0 1
+        vertex 1 0 0
+      endfacet
+endsolid cube
+
