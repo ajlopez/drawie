@@ -67,7 +67,6 @@ exports['z resize 3d point'] = function (test) {
     test.equal(result.z(), 144);
 };
 
-
 exports['rotate point 0 degrees z axis'] = function (test) {
     const point = drawie.point(1, 42, 3);
 
@@ -133,3 +132,70 @@ exports['rotate point 45 degrees z axis'] = function (test) {
     test.equal(result.y(), y);
     test.equal(result.z(), 3);
 };
+
+exports['rotate point 0 degrees y axis'] = function (test) {
+    const point = drawie.point(42, 3, 1);
+
+	const result = point.yrotate(0);
+	
+    test.equal(result.x(), 42);
+    test.equal(result.y(), 3);
+    test.equal(result.z(), 1);
+};
+
+exports['rotate point 90 degrees y axis'] = function (test) {
+    const point = drawie.point(42, 3, 1);
+
+	const result = point.yrotate(90);
+	
+    test.equal(result.x(), 1);
+    test.equal(result.y(), 3);
+    test.equal(result.z(), -42);
+};
+
+exports['rotate point 180 degrees y axis'] = function (test) {
+    const point = drawie.point(42, 3, 1);
+
+	const result = point.yrotate(180);
+	
+    test.equal(result.x(), -42);
+    test.equal(result.y(), 3);
+    test.equal(result.z(), -1);
+};
+
+exports['rotate point 270 degrees y axis'] = function (test) {
+    const point = drawie.point(42, 3, 1);
+
+	const result = point.yrotate(270);
+	
+    test.equal(result.x(), -1);
+    test.equal(result.y(), 3);
+    test.equal(result.z(), 42);
+};
+
+exports['rotate point -90 degrees y axis'] = function (test) {
+    const point = drawie.point(42, 3, 1);
+
+	const result = point.yrotate(-90);
+	
+    test.equal(result.x(), -1);
+    test.equal(result.y(), 3);
+    test.equal(result.z(), 42);
+};
+
+exports['rotate point 45 degrees y axis'] = function (test) {
+    const point = drawie.point(1, 1, 3);
+
+	const result = point.yrotate(45);
+	
+	const cos = Math.cos(2 * Math.PI / 8);
+	const sin = Math.sin(2 * Math.PI / 8);
+	
+	const z = point.z() * cos - point.x() * sin;
+	const x = point.z() * sin + point.x() * cos;
+	
+    test.equal(result.x(), x);
+    test.equal(result.y(), 1);
+    test.equal(result.z(), z);
+};
+
