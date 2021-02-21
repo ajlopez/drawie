@@ -67,3 +67,69 @@ exports['z resize 3d point'] = function (test) {
     test.equal(result.z(), 144);
 };
 
+
+exports['rotate point 0 degrees z axis'] = function (test) {
+    const point = drawie.point(1, 42, 3);
+
+	const result = point.zrotate(0);
+	
+    test.equal(result.x(), 1);
+    test.equal(result.y(), 42);
+    test.equal(result.z(), 3);
+};
+
+exports['rotate point 90 degrees z axis'] = function (test) {
+    const point = drawie.point(1, 42, 3);
+
+	const result = point.zrotate(90);
+	
+    test.equal(result.x(), -42);
+    test.equal(result.y(), 1);
+    test.equal(result.z(), 3);
+};
+
+exports['rotate point 180 degrees z axis'] = function (test) {
+    const point = drawie.point(1, 42, 3);
+
+	const result = point.zrotate(180);
+	
+    test.equal(result.x(), -1);
+    test.equal(result.y(), -42);
+    test.equal(result.z(), 3);
+};
+
+exports['rotate point 270 degrees z axis'] = function (test) {
+    const point = drawie.point(1, 42, 3);
+
+	const result = point.zrotate(270);
+	
+    test.equal(result.x(), 42);
+    test.equal(result.y(), -1);
+    test.equal(result.z(), 3);
+};
+
+exports['rotate point -90 degrees z axis'] = function (test) {
+    const point = drawie.point(1, 42, 3);
+
+	const result = point.zrotate(-90);
+	
+    test.equal(result.x(), 42);
+    test.equal(result.y(), -1);
+    test.equal(result.z(), 3);
+};
+
+exports['rotate point 45 degrees z axis'] = function (test) {
+    const point = drawie.point(1, 1, 3);
+
+	const result = point.zrotate(45);
+	
+	const cos = Math.cos(2 * Math.PI / 8);
+	const sin = Math.sin(2 * Math.PI / 8);
+	
+	const x = point.x() * cos - point.y() * sin;
+	const y = point.x() * sin + point.y() * cos;
+	
+    test.equal(result.x(), x);
+    test.equal(result.y(), y);
+    test.equal(result.z(), 3);
+};
