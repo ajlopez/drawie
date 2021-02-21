@@ -21,5 +21,12 @@ const right = face2.yrotate(270).translate(drawie.point(1, 0, 0));
 const faces = [ top, front, left, bottom, back, right ]
 const cube = drawie.composite(faces);
 
-console.log(convert(cube, 'cube'));
+const cubes = [];
+
+for (let k = 0; k < 10; k++)
+    for (let j = 0; j < 10; j++)
+        for (let i = 0; i < 10; i++)
+            cubes.push(cube.translate(drawie.point(k * 2, j * 2, i * 2)));
+
+console.log(convert(cubes, 'cubes'));
 
