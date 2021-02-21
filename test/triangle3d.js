@@ -109,3 +109,26 @@ exports['y resize triangle'] = function (test) {
     test.equal(triangle.v3().z(), 0);
 };
 
+exports['z resize triangle'] = function (test) {
+    const from = drawie.point(1, 42, 1);
+    const to = drawie.point(2, 3, 1);
+    const to2 = drawie.point(3, 3, 1);
+
+    const triangle = drawie.triangle(from, to, to2).zresize(2);
+	
+    test.ok(triangle);
+    test.equal(typeof triangle, 'object');
+    
+    test.equal(triangle.v1().x(), 1);
+    test.equal(triangle.v1().y(), 42);
+    test.equal(triangle.v1().z(), 2);
+    
+    test.equal(triangle.v2().x(), 2);
+    test.equal(triangle.v2().y(), 3);
+    test.equal(triangle.v2().z(), 2);
+    
+    test.equal(triangle.v3().x(), 3);
+    test.equal(triangle.v3().y(), 3);
+    test.equal(triangle.v3().z(), 2);
+};
+
