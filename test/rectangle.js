@@ -10,6 +10,7 @@ exports['create rectangle as object'] = function (test) {
 	
     test.ok(rectangle);
     test.equal(typeof rectangle, 'object');
+    test.ok(drawie.is2d(rectangle));
     
     test.deepEqual(rectangle.style(), style);
     

@@ -10,6 +10,7 @@ exports['create triangle as object'] = function (test) {
 	
     test.ok(triangle);
     test.equal(typeof triangle, 'object');
+    test.ok(!drawie.is2d(triangle));
     
     test.equal(triangle.v1().x(), 1);
     test.equal(triangle.v1().y(), 42);

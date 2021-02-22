@@ -6,6 +6,7 @@ exports['create 3d point as object'] = function (test) {
     
     test.ok(point);
     test.equal(typeof point, 'object');
+    test.ok(!drawie.is2d(point));
 };
 
 exports['get coordinates from 3d point'] = function (test) {

@@ -11,6 +11,7 @@ exports['create triangle as object'] = function (test) {
 	
     test.ok(triangle);
     test.equal(typeof triangle, 'object');
+    test.ok(drawie.is2d(triangle));
     
     test.deepEqual(triangle.style(), style);
     
