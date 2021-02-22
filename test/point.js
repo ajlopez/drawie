@@ -8,6 +8,12 @@ exports['create point as object'] = function (test) {
     test.equal(typeof point, 'object');
 };
 
+exports['point is 2d'] = function (test) {
+    const point = drawie.point(1, 42);
+    
+    test.ok(drawie.is2d(point));
+};
+
 exports['get coordinates from point'] = function (test) {
     const point = drawie.point(1, 42);
     
