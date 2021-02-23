@@ -12,6 +12,7 @@ exports['create yfunction as object'] = function (test) {
 	
     test.ok(yfunction);
     test.equal(typeof yfunction, 'object');
+    test.ok(drawie.is2d(yfunction));
     
     test.ok(yfunction.elements());
 	test.ok(Array.isArray(yfunction.elements()));

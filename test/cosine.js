@@ -10,5 +10,6 @@ exports['create cosine as object'] = function (test) {
 	
     test.ok(cosine);
     test.equal(typeof cosine, 'object');
+    test.ok(drawie.is2d(cosine));
 };
 

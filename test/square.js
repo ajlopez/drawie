@@ -9,6 +9,7 @@ exports['create square as object'] = function (test) {
 	
     test.ok(square);
     test.equal(typeof square, 'object');
+    test.ok(drawie.is2d(square));
     
     test.deepEqual(square.style(), style);
     

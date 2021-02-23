@@ -10,6 +10,7 @@ exports['create circle as object using radius and steps'] = function (test) {
 	
     test.ok(circle);
     test.equal(typeof circle, 'object');
+    test.ok(drawie.is2d(circle));
     
     test.deepEqual(circle.style(), style);
     

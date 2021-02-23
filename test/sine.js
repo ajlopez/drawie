@@ -11,6 +11,7 @@ exports['create sine as object'] = function (test) {
 	
     test.ok(sine);
     test.equal(typeof sine, 'object');
+    test.ok(drawie.is2d(sine));
     
     test.deepEqual(sine.style(), style);
     

@@ -9,6 +9,7 @@ exports['create line as object'] = function (test) {
     
     test.ok(line);
     test.equal(typeof line, 'object');
+    test.ok(drawie.is2d(line));
 	
 	test.equal(line.from().x(), 1);
 	test.equal(line.from().y(), 42);

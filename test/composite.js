@@ -11,6 +11,7 @@ exports['create composite as object'] = function (test) {
     
     test.ok(composite);
     test.equal(typeof composite, 'object');
+    test.ok(drawie.is2d(composite));
 
     test.ok(composite.elements());
 	test.ok(Array.isArray(composite.elements()));

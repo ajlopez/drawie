@@ -12,6 +12,7 @@ exports['create pfunction as object'] = function (test) {
 	
     test.ok(pfunction);
     test.equal(typeof pfunction, 'object');
+    test.ok(drawie.is2d(pfunction));
     
     test.ok(pfunction.elements());
 	test.ok(Array.isArray(pfunction.elements()));

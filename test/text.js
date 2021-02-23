@@ -7,6 +7,7 @@ exports['create text as object'] = function (test) {
     
     test.ok(text);
     test.equal(typeof text, 'object');
+    test.ok(drawie.is2d(text));
 	
 	test.equal(text.x(), 10);
 	test.equal(text.y(), 20);
