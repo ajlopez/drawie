@@ -2,7 +2,7 @@
 const drawie = require('..');
 
 exports['create 3d point as object'] = function (test) {
-    const point = drawie.point(1, 42, 144);
+    const point = drawie.d3.point(1, 42, 144);
     
     test.ok(point);
     test.equal(typeof point, 'object');
@@ -10,7 +10,7 @@ exports['create 3d point as object'] = function (test) {
 };
 
 exports['get coordinates from 3d point'] = function (test) {
-    const point = drawie.point(1, 42, 144);
+    const point = drawie.d3.point(1, 42, 144);
     
     test.equal(point.x(), 1);
     test.equal(point.y(), 42);
@@ -18,8 +18,8 @@ exports['get coordinates from 3d point'] = function (test) {
 };
 
 exports['translate 3d point'] = function (test) {
-    const point = drawie.point(1, 42, 144);
-	const point2 = drawie.point(3, 4, 5);
+    const point = drawie.d3.point(1, 42, 144);
+	const point2 = drawie.d3.point(3, 4, 5);
 
 	const result = point.translate(point2);
 	
@@ -29,7 +29,7 @@ exports['translate 3d point'] = function (test) {
 };
 
 exports['resize 3d point'] = function (test) {
-    const point = drawie.point(1, 21, 72);
+    const point = drawie.d3.point(1, 21, 72);
 
 	const result = point.resize(2);
 	
@@ -39,7 +39,7 @@ exports['resize 3d point'] = function (test) {
 };
 
 exports['x resize 3d point'] = function (test) {
-    const point = drawie.point(1, 42, 144);
+    const point = drawie.d3.point(1, 42, 144);
 
 	const result = point.xresize(2);
 	
@@ -49,7 +49,7 @@ exports['x resize 3d point'] = function (test) {
 };
 
 exports['y resize 3d point'] = function (test) {
-    const point = drawie.point(1, 21, 144);
+    const point = drawie.d3.point(1, 21, 144);
 
 	const result = point.yresize(2);
 	
@@ -59,7 +59,7 @@ exports['y resize 3d point'] = function (test) {
 };
 
 exports['z resize 3d point'] = function (test) {
-    const point = drawie.point(1, 42, 72);
+    const point = drawie.d3.point(1, 42, 72);
 
 	const result = point.zresize(2);
 	
@@ -69,7 +69,7 @@ exports['z resize 3d point'] = function (test) {
 };
 
 exports['rotate point 0 degrees z axis'] = function (test) {
-    const point = drawie.point(1, 42, 3);
+    const point = drawie.d3.point(1, 42, 3);
 
 	const result = point.zrotate(0);
 	
@@ -79,7 +79,7 @@ exports['rotate point 0 degrees z axis'] = function (test) {
 };
 
 exports['rotate point 90 degrees z axis'] = function (test) {
-    const point = drawie.point(1, 42, 3);
+    const point = drawie.d3.point(1, 42, 3);
 
 	const result = point.zrotate(90);
 	
@@ -89,7 +89,7 @@ exports['rotate point 90 degrees z axis'] = function (test) {
 };
 
 exports['rotate point 180 degrees z axis'] = function (test) {
-    const point = drawie.point(1, 42, 3);
+    const point = drawie.d3.point(1, 42, 3);
 
 	const result = point.zrotate(180);
 	
@@ -99,7 +99,7 @@ exports['rotate point 180 degrees z axis'] = function (test) {
 };
 
 exports['rotate point 270 degrees z axis'] = function (test) {
-    const point = drawie.point(1, 42, 3);
+    const point = drawie.d3.point(1, 42, 3);
 
 	const result = point.zrotate(270);
 	
@@ -109,7 +109,7 @@ exports['rotate point 270 degrees z axis'] = function (test) {
 };
 
 exports['rotate point -90 degrees z axis'] = function (test) {
-    const point = drawie.point(1, 42, 3);
+    const point = drawie.d3.point(1, 42, 3);
 
 	const result = point.zrotate(-90);
 	
@@ -119,7 +119,7 @@ exports['rotate point -90 degrees z axis'] = function (test) {
 };
 
 exports['rotate point 45 degrees z axis'] = function (test) {
-    const point = drawie.point(1, 1, 3);
+    const point = drawie.d3.point(1, 1, 3);
 
 	const result = point.zrotate(45);
 	
@@ -135,7 +135,7 @@ exports['rotate point 45 degrees z axis'] = function (test) {
 };
 
 exports['rotate point 0 degrees y axis'] = function (test) {
-    const point = drawie.point(42, 3, 1);
+    const point = drawie.d3.point(42, 3, 1);
 
 	const result = point.yrotate(0);
 	
@@ -145,7 +145,7 @@ exports['rotate point 0 degrees y axis'] = function (test) {
 };
 
 exports['rotate point 90 degrees y axis'] = function (test) {
-    const point = drawie.point(42, 3, 1);
+    const point = drawie.d3.point(42, 3, 1);
 
 	const result = point.yrotate(90);
 	
@@ -155,7 +155,7 @@ exports['rotate point 90 degrees y axis'] = function (test) {
 };
 
 exports['rotate point 180 degrees y axis'] = function (test) {
-    const point = drawie.point(42, 3, 1);
+    const point = drawie.d3.point(42, 3, 1);
 
 	const result = point.yrotate(180);
 	
@@ -165,7 +165,7 @@ exports['rotate point 180 degrees y axis'] = function (test) {
 };
 
 exports['rotate point 270 degrees y axis'] = function (test) {
-    const point = drawie.point(42, 3, 1);
+    const point = drawie.d3.point(42, 3, 1);
 
 	const result = point.yrotate(270);
 	
@@ -175,7 +175,7 @@ exports['rotate point 270 degrees y axis'] = function (test) {
 };
 
 exports['rotate point -90 degrees y axis'] = function (test) {
-    const point = drawie.point(42, 3, 1);
+    const point = drawie.d3.point(42, 3, 1);
 
 	const result = point.yrotate(-90);
 	
@@ -185,7 +185,7 @@ exports['rotate point -90 degrees y axis'] = function (test) {
 };
 
 exports['rotate point 45 degrees y axis'] = function (test) {
-    const point = drawie.point(1, 1, 3);
+    const point = drawie.d3.point(1, 1, 3);
 
 	const result = point.yrotate(45);
 	
@@ -201,7 +201,7 @@ exports['rotate point 45 degrees y axis'] = function (test) {
 };
 
 exports['rotate point 0 degrees x axis'] = function (test) {
-    const point = drawie.point(3, 1, 42);
+    const point = drawie.d3.point(3, 1, 42);
 
 	const result = point.xrotate(0);
 	
@@ -211,7 +211,7 @@ exports['rotate point 0 degrees x axis'] = function (test) {
 };
 
 exports['rotate point 90 degrees x axis'] = function (test) {
-    const point = drawie.point(3, 1, 42);
+    const point = drawie.d3.point(3, 1, 42);
 
 	const result = point.xrotate(90);
 	
@@ -221,7 +221,7 @@ exports['rotate point 90 degrees x axis'] = function (test) {
 };
 
 exports['rotate point 180 degrees x axis'] = function (test) {
-    const point = drawie.point(3, 1, 42);
+    const point = drawie.d3.point(3, 1, 42);
 
 	const result = point.xrotate(180);
 	
@@ -231,7 +231,7 @@ exports['rotate point 180 degrees x axis'] = function (test) {
 };
 
 exports['rotate point 270 degrees x axis'] = function (test) {
-    const point = drawie.point(3, 1, 42);
+    const point = drawie.d3.point(3, 1, 42);
 
 	const result = point.xrotate(270);
 	
@@ -241,7 +241,7 @@ exports['rotate point 270 degrees x axis'] = function (test) {
 };
 
 exports['rotate point -90 degrees x axis'] = function (test) {
-    const point = drawie.point(3, 1, 42);
+    const point = drawie.d3.point(3, 1, 42);
 
 	const result = point.xrotate(-90);
 	
@@ -251,7 +251,7 @@ exports['rotate point -90 degrees x axis'] = function (test) {
 };
 
 exports['rotate point 45 degrees x axis'] = function (test) {
-    const point = drawie.point(3, 1, 2);
+    const point = drawie.d3.point(3, 1, 2);
 
 	const result = point.xrotate(45);
 	
