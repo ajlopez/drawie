@@ -2,11 +2,11 @@
 const drawie = require('..');
 
 exports['create triangle as object'] = function (test) {
-    const from = drawie.point(1, 42, 0);
-    const to = drawie.point(2, 3, 0);
-    const to2 = drawie.point(3, 3, 0);
+    const from = drawie.d3.point(1, 42, 0);
+    const to = drawie.d3.point(2, 3, 0);
+    const to2 = drawie.d3.point(3, 3, 0);
 
-    const triangle = drawie.triangle(from, to, to2);
+    const triangle = drawie.d3.triangle(from, to, to2);
 	
     test.ok(triangle);
     test.equal(typeof triangle, 'object');
@@ -26,11 +26,11 @@ exports['create triangle as object'] = function (test) {
 };
 
 exports['get normal'] = function (test) {
-    const from = drawie.point(0, 0, 0);
-    const to = drawie.point(1, 0, 0);
-    const to2 = drawie.point(0, 1, 0);
+    const from = drawie.d3.point(0, 0, 0);
+    const to = drawie.d3.point(1, 0, 0);
+    const to2 = drawie.d3.point(0, 1, 0);
 
-    const triangle = drawie.triangle(from, to, to2);
+    const triangle = drawie.d3.triangle(from, to, to2);
     
     const normal = triangle.normal();
     
@@ -42,12 +42,12 @@ exports['get normal'] = function (test) {
 };
 
 exports['transalte triangle'] = function (test) {
-    const from = drawie.point(1, 42, 0);
-    const to = drawie.point(2, 3, 0);
-    const to2 = drawie.point(3, 3, 0);
+    const from = drawie.d3.point(1, 42, 0);
+    const to = drawie.d3.point(2, 3, 0);
+    const to2 = drawie.d3.point(3, 3, 0);
 
-    const triangle = drawie.triangle(from, to, to2)
-        .translate(drawie.point(1, 2, 3));
+    const triangle = drawie.d3.triangle(from, to, to2)
+        .translate(drawie.d3.point(1, 2, 3));
 	
     test.ok(triangle);
     test.equal(typeof triangle, 'object');
@@ -66,11 +66,11 @@ exports['transalte triangle'] = function (test) {
 };
 
 exports['resize triangle'] = function (test) {
-    const from = drawie.point(1, 42, 0);
-    const to = drawie.point(2, 3, 0);
-    const to2 = drawie.point(3, 3, 0);
+    const from = drawie.d3.point(1, 42, 0);
+    const to = drawie.d3.point(2, 3, 0);
+    const to2 = drawie.d3.point(3, 3, 0);
 
-    const triangle = drawie.triangle(from, to, to2).resize(2);
+    const triangle = drawie.d3.triangle(from, to, to2).resize(2);
 	
     test.ok(triangle);
     test.equal(typeof triangle, 'object');
@@ -89,11 +89,11 @@ exports['resize triangle'] = function (test) {
 };
 
 exports['x resize triangle'] = function (test) {
-    const from = drawie.point(1, 42, 0);
-    const to = drawie.point(2, 3, 0);
-    const to2 = drawie.point(3, 3, 0);
+    const from = drawie.d3.point(1, 42, 0);
+    const to = drawie.d3.point(2, 3, 0);
+    const to2 = drawie.d3.point(3, 3, 0);
 
-    const triangle = drawie.triangle(from, to, to2).xresize(2);
+    const triangle = drawie.d3.triangle(from, to, to2).xresize(2);
 	
     test.ok(triangle);
     test.equal(typeof triangle, 'object');
@@ -112,11 +112,11 @@ exports['x resize triangle'] = function (test) {
 };
 
 exports['y resize triangle'] = function (test) {
-    const from = drawie.point(1, 42, 0);
-    const to = drawie.point(2, 3, 0);
-    const to2 = drawie.point(3, 3, 0);
+    const from = drawie.d3.point(1, 42, 0);
+    const to = drawie.d3.point(2, 3, 0);
+    const to2 = drawie.d3.point(3, 3, 0);
 
-    const triangle = drawie.triangle(from, to, to2).yresize(2);
+    const triangle = drawie.d3.triangle(from, to, to2).yresize(2);
 	
     test.ok(triangle);
     test.equal(typeof triangle, 'object');
@@ -135,11 +135,11 @@ exports['y resize triangle'] = function (test) {
 };
 
 exports['z resize triangle'] = function (test) {
-    const from = drawie.point(1, 42, 1);
-    const to = drawie.point(2, 3, 1);
-    const to2 = drawie.point(3, 3, 1);
+    const from = drawie.d3.point(1, 42, 1);
+    const to = drawie.d3.point(2, 3, 1);
+    const to2 = drawie.d3.point(3, 3, 1);
 
-    const triangle = drawie.triangle(from, to, to2).zresize(2);
+    const triangle = drawie.d3.triangle(from, to, to2).zresize(2);
 	
     test.ok(triangle);
     test.equal(typeof triangle, 'object');
