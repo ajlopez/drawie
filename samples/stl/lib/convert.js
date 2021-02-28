@@ -41,7 +41,7 @@ function convert(element, name, text) {
                     const p2 = elements[(k + 1) % l];
                     const p3 = elements[(k + 2) % l];
                     
-                    const triangle = drawie.triangle(p1, p2, p3);
+                    const triangle = drawie.d3.triangle(p1, p2, p3);
                     
                     text = convert(triangle, null, text);
                 }
