@@ -2,13 +2,13 @@
 const drawie = require('..');
 
 exports['create composite as object'] = function (test) {
-    const from = drawie.point(1, 42, 0);
-    const to = drawie.point(2, 3, 0);
-    const to2 = drawie.point(3, 3, 0);
+    const from = drawie.d3.point(1, 42, 0);
+    const to = drawie.d3.point(2, 3, 0);
+    const to2 = drawie.d3.point(3, 3, 0);
 
-    const triangle = drawie.triangle(from, to, to2);
+    const triangle = drawie.d3.triangle(from, to, to2);
 	
-	const composite = drawie.composite([ triangle ]);
+	const composite = drawie.d3.composite([ triangle ]);
     
     test.ok(composite);
     test.equal(typeof composite, 'object');
@@ -30,14 +30,14 @@ exports['create composite as object'] = function (test) {
 };
 
 exports['translate composite'] = function (test) {
-    const from = drawie.point(1, 42, 0);
-    const to = drawie.point(2, 3, 0);
-    const to2 = drawie.point(3, 3, 0);
+    const from = drawie.d3.point(1, 42, 0);
+    const to = drawie.d3.point(2, 3, 0);
+    const to2 = drawie.d3.point(3, 3, 0);
 
-    const triangle = drawie.triangle(from, to, to2);
+    const triangle = drawie.d3.triangle(from, to, to2);
 	
-	const composite = drawie.composite([ triangle ])
-        .translate(drawie.point(1, 2, 3));
+	const composite = drawie.d3.composite([ triangle ])
+        .translate(drawie.d3.point(1, 2, 3));
     
     test.ok(composite);
     test.equal(typeof composite, 'object');
