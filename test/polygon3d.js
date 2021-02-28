@@ -2,12 +2,12 @@
 const drawie = require('..');
 
 exports['create polygon as object'] = function (test) {
-    const p1 = drawie.point(0, 0, 0);
-    const p2 = drawie.point(1, 0, 0);
-    const p3 = drawie.point(1, 1, 0);
-    const p4 = drawie.point(0, 1, 0);
+    const p1 = drawie.d3.point(0, 0, 0);
+    const p2 = drawie.d3.point(1, 0, 0);
+    const p3 = drawie.d3.point(1, 1, 0);
+    const p4 = drawie.d3.point(0, 1, 0);
 
-    const polygon = drawie.polygon([ p1, p2, p3, p4 ]);
+    const polygon = drawie.d3.polygon([ p1, p2, p3, p4 ]);
 	
     test.ok(polygon);
     test.equal(typeof polygon, 'object');
@@ -33,14 +33,14 @@ exports['create polygon as object'] = function (test) {
 };
 
 exports['translate polygon'] = function (test) {
-    const p1 = drawie.point(0, 0, 0);
-    const p2 = drawie.point(1, 0, 0);
-    const p3 = drawie.point(1, 1, 0);
-    const p4 = drawie.point(0, 1, 0);
+    const p1 = drawie.d3.point(0, 0, 0);
+    const p2 = drawie.d3.point(1, 0, 0);
+    const p3 = drawie.d3.point(1, 1, 0);
+    const p4 = drawie.d3.point(0, 1, 0);
     
-    const pm = drawie.point(1, 2, 3);
+    const pm = drawie.d3.point(1, 2, 3);
 
-    const polygon = drawie.polygon([ p1, p2, p3, p4 ]).translate(pm);
+    const polygon = drawie.d3.polygon([ p1, p2, p3, p4 ]).translate(pm);
 	
     test.ok(polygon);
     test.equal(typeof polygon, 'object');
