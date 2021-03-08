@@ -203,3 +203,26 @@ exports['y rotate triangle'] = function (test) {
     test.equal(triangle.v3().z(), -3);
 };
 
+exports['x rotate triangle'] = function (test) {
+    const from = drawie.d3.point(1, 42, 0);
+    const to = drawie.d3.point(2, 3, 0);
+    const to2 = drawie.d3.point(3, 3, 1);
+
+    const triangle = drawie.d3.triangle(from, to, to2).xrotate(90);
+	
+    test.ok(triangle);
+    test.equal(typeof triangle, 'object');
+    
+    test.equal(triangle.v1().x(), 1);
+    test.equal(triangle.v1().y(), 0);
+    test.equal(triangle.v1().z(), 42);
+    
+    test.equal(triangle.v2().x(), 2);
+    test.equal(triangle.v2().y(), 0);
+    test.equal(triangle.v2().z(), 3);
+    
+    test.equal(triangle.v3().x(), 3);
+    test.equal(triangle.v3().y(), -1);
+    test.equal(triangle.v3().z(), 3);
+};
+
